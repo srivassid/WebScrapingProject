@@ -1,5 +1,7 @@
 # TTRecord
 
+![alt text](https://github.com/srivassid/TTRecord/blob/master/flow.jpg?raw=true)
+
 <h2>High Level OverView</h2>
 At the high level, i am using BeautifulSoup4 to scrape the data from the websites, then i put that data in a pandas dataframe, then i use Spacy to determine entities in text, vaderSentiment to determine sentiment of the article, and finally store that data in ElasticSearch.
 
