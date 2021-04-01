@@ -7,10 +7,14 @@ Then i have an API that allows for searching data from ElasticSearch, which can 
 
 http://a4848d1fc15934aceaaf45f4c0d7b063-1043988501.us-east-2.elb.amazonaws.com:5000/getdata?query=%22europe%22
 
+I use Flask as backend.
+
 I have one single docker image that contains all the files, then i have 5 kubernetes deployments that contains 4 scrapers and 1 api pods. 
 
 <h3>Crawlers</h3>
 Bloomberg.py, Urcacp.py, Savills.py and Elcomercio.py are the crawlers that scrape data from the websites. They contain the scraping logic.
+
+For the website urcacp.com, it was a little tricky getting the data because it has images. Which is why i first download the imgaes, then i use pytesseract to get text from the images, and then i store it in ES. It is to be notes that i do not have author and title for the data. I find the longest single sentence from the text and use that as title, but i do not have author.
 
 <h3>Helper Functions</h3>
 
