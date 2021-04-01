@@ -24,8 +24,8 @@ For the website urcacp.com, it was a little tricky getting the data because it h
 <h3>Helper Functions</h3>
 
 Helper functions are the common functions used by crawler files. They contain functions GetEntities, which use Spacy to determine entiites in the text, and GetSentiment, which uses VaderSentiment to determine sentiment of the article. Sentiment score is a compound score between -1 and 1, -1 being really negative tone and +1 being a really positive tone. It also contains PushToES method, which pushes data to ElasticSearch. The stored data contains the following rows
-<br>
-Source: Source of article, bloomberg, uucacp etc
+<br><br>
+Source: Source of article, bloomberg, urcacp etc
 <br>
 Title: Title of the article
 <br>
