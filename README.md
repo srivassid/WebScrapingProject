@@ -1,6 +1,6 @@
 # TTRecord
 
-Architecture
+<h2>Architecture</h2>
 
 ![alt text](https://github.com/srivassid/TTRecord/blob/master/flow.jpg?raw=true)
 
