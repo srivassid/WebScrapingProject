@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scrape-urcacp
+  labels:
+    app: scrape-urcacp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scrape-urcacp
+  template:
+    metadata:
+      labels:
+        app: scrape-urcacp
+    spec:
+      containers:
+      - name: scrape-urcacp
+        image: 711442408216.dkr.ecr.us-east-2.amazonaws.com/ttrecordregistry:latest
+        command: ["python3", "Urcacp.py"]
+#        args: ["EgressLiveAllCowBehaviorAgg18001.yaml"]
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "768Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
