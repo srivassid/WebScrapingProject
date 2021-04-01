@@ -23,7 +23,19 @@ For the website urcacp.com, it was a little tricky getting the data because it h
 
 <h3>Helper Functions</h3>
 
-Helper functions are the common functions used by crawler files. They contain functions GetEntities, which use Spacy to determine entiites in the text, and GetSentiment, which uses VaderSentiment to determine sentiment of the article. Sentiment score is a compound score between -1 and 1, -1 being really negative tone and +1 being a really positive tone. It also contains PushToES method, which pushes data to ElasticSearch.
+Helper functions are the common functions used by crawler files. They contain functions GetEntities, which use Spacy to determine entiites in the text, and GetSentiment, which uses VaderSentiment to determine sentiment of the article. Sentiment score is a compound score between -1 and 1, -1 being really negative tone and +1 being a really positive tone. It also contains PushToES method, which pushes data to ElasticSearch. The stored data contains the following rows
+
+Source: Source of article, bloomberg, uucacp etc
+Title: Title of the article
+Content: Body of the article
+URL: URL of the article
+Entities: Entities determined by Spacey
+SentimentScore: sentiment score of the article (between 1 and -1)
+
+
+<h3>API</h3>
+
+I am using Flask to serve data from ElasticSearch. I am using MultiMatch query, which searches for a term on several different fields. In this case, the search will be held over Title, Content, Author and Source.
 
 <h3>Docker and Kubernetes</h3>
 
