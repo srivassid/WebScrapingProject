@@ -1,4 +1,4 @@
-# TTRecord
+# WebScrapingProject
 
 <h2>Architecture</h2>
 
@@ -7,10 +7,6 @@
 <br><br>
 <h2>High Level OverView</h2>
 At the high level, i am using BeautifulSoup4 to scrape the data from the websites, then i put that data in a pandas dataframe, then i use Spacy to determine entities in text, vaderSentiment to determine sentiment of the article, and finally store that data in ElasticSearch.
-
-Then i have an API that allows for searching data from ElasticSearch, which can be found at 
-
-http://a4848d1fc15934aceaaf45f4c0d7b063-1043988501.us-east-2.elb.amazonaws.com:5000/getdata?query=%22europe%22
 
 I use Flask as backend.
 
